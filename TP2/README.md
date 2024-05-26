@@ -47,11 +47,11 @@ Inconvénients :
 5) a/ docker pull mysql
       docker pull phpmyadmin/phpmyadmin
 
-b/ Je crée le réseau Docker pour permettre la communication entre les containers : 
+   b/ Je crée le réseau Docker pour permettre la communication entre les containers : 
           docker network create NetworkDevopsTp
-   Je démarre et je connecte le container MySql au réseau :
+      Je démarre et je connecte le container MySql au réseau :
           docker run -d --name mysql-db --network NetworkDevopsTp -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=testdb mysql
-   Je démarre et je connecte le container PhpMyadmin au réseau :
+      Je démarre et je connecte le container PhpMyadmin au réseau :
           docker run -d --name phpmyadmin --network NetworkDevopsTp -e PMA_HOST=mysql-db -p 8080:80 phpmyadmin/phpmyadmin
 
 6) a/ docker run : Utilisé pour démarrer un seul container avec une configuration spécifique. On doit répéter cette commande pour chaque container et spécifier les paramètres à chaque fois.
