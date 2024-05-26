@@ -3,3 +3,17 @@ Pour le faire et cloner le repo GIT :
 git clone https://github.com/quentin-desbin/ynov-api-23-24.git
  
 
+2/ FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+
+
+
